@@ -1,7 +1,7 @@
 {
-  "name": "material-dashboard-dark",
-  "version": "2.1.0",
-  "description": "Material Dasboard Dark Edition, a Google Material Desgin. Coded by Creative Tim",
+  "name": "black-dashboard",
+  "version": "1.0.0",
+  "description": "Black Dasboard, a Black Desgin. Coded by Creative Tim",
   "main": "index.html",
   "directories": {
     "example": "root"
@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/creativetimofficial/material-dashboard.git"
+    "url": "git+https://github.com/creativetimofficial/black-dashboard.git"
   },
   "keywords": [
-    "material dashboard",
-    "bootstrap material admin",
-    "bootstrap material dashboard",
-    "material design admin",
-    "material design",
+    "black dashboard",
+    "bootstrap admin",
+    "bootstrap dashboard",
+    "black design admin",
+    "black design",
     "creative tim",
     "html dashboard",
     "html css dashboard",
@@ -34,7 +34,7 @@
   "author": "Creative Tim <hello@creative-tim.com> (https://www.creative-tim.com/)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/creativetimofficial/material-dashboard/issues"
+    "url": "https://github.com/creativetimofficial/black-dashboard/issues"
   },
   "devDependencies": {
     "gulp": "^3.9.1",
@@ -45,5 +45,5 @@
     "gulp-sourcemaps": "^2.6.4",
     "gulp-open": "^3.0.1"
   },
-  "homepage": "http://demos.creative-tim.com/material-dashboard-dark/examples/dashboard.html"
+  "homepage": "http://demos.creative-tim.com/black-dashboard/examples/dashboard.html?_ga=2.143239282.69692347.1519629130-329288944.1519374311"
 }
