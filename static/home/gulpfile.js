@@ -9,7 +9,7 @@ var Paths = {
   HERE: './',
   DIST: 'dist/',
   CSS: './assets/css/',
-  SCSS_TOOLKIT_SOURCES: './assets/scss/material-kit.scss',
+  SCSS_TOOLKIT_SOURCES: './assets/scss/paper-kit.scss',
   SCSS: './assets/scss/**/**'
 };
 
@@ -23,12 +23,12 @@ gulp.task('compile-scss', function() {
 });
 
 gulp.task('watch', function() {
-  gulp.watch(Paths.SCSS, gulp.series('compile-scss'));
+  gulp.watch(Paths.SCSS, ['compile-scss']);
 });
 
 gulp.task('open', function() {
-  gulp.src('presentation.html')
+  gulp.src('index.html')
     .pipe(open());
 });
 
-gulp.task('open-app', gulp.parallel('open', 'watch'));
+gulp.task('open-app', ['open', 'watch']);
