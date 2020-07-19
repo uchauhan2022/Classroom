@@ -25,6 +25,17 @@
  * http://www.apache.org/licenses/LICENSE-2.0
  */
 
+ @media screen and (min-width: 601px) {
+   h1.correct1 {
+     font-size: 4em;
+   }
+ }
+
+ @media screen and (max-width: 600px) {
+   h1.correct1 {
+     font-size: 4em;
+   }
+ }
 .bootstrap-switch {
   display: inline-block;
   direction: ltr;
