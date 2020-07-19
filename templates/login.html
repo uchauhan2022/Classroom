@@ -1,0 +1,135 @@
+
+<!--
+=========================================================
+ Paper Kit 2 - v2.2.0
+=========================================================
+
+ Product Page: https://www.creative-tim.com/product/paper-kit-2
+ Copyright 2019 Creative Tim (https://www.creative-tim.com)
+ Licensed under MIT (https://github.com/creativetimofficial/paper-kit-2/blob/master/LICENSE.md)
+
+ Coded by Creative Tim
+
+=========================================================
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. -->
+
+{% extends 'base.html' %}
+{% block Content %}
+<body class="register-page sidebar-collapse">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top navbar-transparent " color-on-scroll="300">
+    <div class="container">
+      <div class="navbar-translate">
+        <a class="navbar-brand" href="#" rel="tooltip" title="Coded by Creative Tim" data-placement="bottom" >
+        ClassRoom
+        </a>
+        <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-bar bar1"></span>
+          <span class="navbar-toggler-bar bar2"></span>
+          <span class="navbar-toggler-bar bar3"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse justify-content-end" id="navigation">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a href="#" class="nav-link btn btn-secondary">  <i class="fa fa-user-plus" aria-hidden="true"></i> Signup Instead</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- End Navbar -->
+  <!-- <div class="page-header" style="background-image: url('../static/home/assets/img/login-image.jpg');">
+
+    <div class="container">
+        <div class="row">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="page-header" style="background-image: url('../static/home/assets/img/login-image.jpg');">
+            <div class="filter"></div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4 ml-auto mr-auto">
+                            <div class="card card-register">
+                                <h3 class="title mx-auto">Welcome</h3>
+								<div class="social-line text-center">
+                                    <a href="#pablo" class="btn btn-neutral btn-facebook btn-just-icon">
+                                        <i class="fa fa-facebook-square"></i>
+                                    </a>
+                                    <a href="#pablo" class="btn btn-neutral btn-google btn-just-icon">
+                                        <i class="fa fa-google-plus"></i>
+                                    </a>
+									<a href="#pablo" class="btn btn-neutral btn-twitter btn-just-icon">
+										<i class="fa fa-twitter"></i>
+									</a>
+                                </div>
+                                <form class="register-form">
+                                    <label>Email</label>
+                                    <input type="text" class="form-control" placeholder="Email">
+
+                                    <label>Password</label>
+                                    <input type="password" class="form-control" placeholder="Password">
+                                    <button class="btn btn-danger btn-block btn-round">Register</button>
+                                </form>
+                                <div class="forgot">
+                                    <a href="#" class="btn btn-link btn-danger">Forgot password?</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer register-footer text-center">
+						<h6>© <script>document.write(new Date().getFullYear())</script>, made with <i class="fa fa-heart heart"></i> by Creative Tim</h6>
+					</div>
+        </div>
+
+        </div>
+    </div>
+</div> -->
+  <div class="page-header" style="background-image: url('../static/home/assets/img/login-image.jpg');">
+    <div class="filter"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 ml-auto mr-auto">
+          <div class="card card-register">
+            <h2 class="title mx-auto" style="font-weight:bold">Welcome</h2>
+
+            <form class="register-form">
+              <label >Username</label>
+              <input type="text" class="form-control" placeholder="Username">
+              <label>Password</label>
+              <input type="password" class="form-control" placeholder="Password">
+              <button class="btn btn-danger btn-block btn-round">Login</button>
+            </form>
+            <div class="forgot">
+              <a href="#" class="btn btn-link btn-secondary">Forgot password?</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="footer register-footer text-center">
+      <h6>©
+        <script>
+          document.write(new Date().getFullYear())
+        </script>, made with <i class="fa fa-heart heart"></i> by Creative Tim</h6>
+    </div> -->
+  </div>
+  <!--   Core JS Files   -->
+    {% endblock%}
