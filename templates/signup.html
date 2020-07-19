@@ -22,7 +22,7 @@ The above copyright notice and this permission notice shall be included in all c
     <div class="container">
       <div class="navbar-translate">
         <a class="navbar-brand" href="https://demos.creative-tim.com/paper-kit/index.html" rel="tooltip" title="Coded by Creative Tim" data-placement="bottom" target="_blank">
-          Paper Kit 2
+          ClassRoomZ
         </a>
         <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-bar bar1"></span>
@@ -31,7 +31,7 @@ The above copyright notice and this permission notice shall be included in all c
         </button>
       </div>
       <div class="collapse navbar-collapse justify-content-end" id="navigation">
-        <ul class="navbar-nav">
+        <!-- <ul class="navbar-nav">
           <li class="nav-item">
             <a href="../index.html" class="nav-link"><i class="nc-icon nc-layout-11"></i> Components</a>
           </li>
@@ -62,8 +62,9 @@ The above copyright notice and this permission notice shall be included in all c
               <p class="d-lg-none">GitHub</p>
             </a>
           </li>
-        </ul>
+        </ul> -->
       </div>
+      <a href="#" class="nav-link btn btn-secondary">  <i class="fa fa-user" aria-hidden="true"></i> Login Instead</a>
     </div>
   </nav>
   <!-- End Navbar -->
@@ -129,14 +130,15 @@ The above copyright notice and this permission notice shall be included in all c
         </div>
     </div>
 </div> -->
-  <div class="page-header" style="background-image: url('../assets/img/login-image.jpg');">
+  <div class="page-header" style="background-image: url('../static/home/assets/img/login-image.jpg');">
     <div class="filter"></div>
     <div class="container">
       <div class="row">
         <div class="col-lg-4 ml-auto mr-auto">
-          <div class="card card-register">
-            <h3 class="title mx-auto">Welcome</h3>
-            <div class="social-line text-center">
+          <div style="width: 450px" class="card card-register">
+            <!-- <h3 style="margin-top:5px, margin-bottom: 0px" class="title mx-auto">ClassRoomZ</h3> -->
+            <h3 style="margin-top:10px; margin-bottom: 5px" class="title mx-auto">Create Your Account</h3>
+            <!-- <div class="social-line text-center">
               <a href="#pablo" class="btn btn-neutral btn-facebook btn-just-icon">
                 <i class="fa fa-facebook-square"></i>
               </a>
@@ -146,12 +148,36 @@ The above copyright notice and this permission notice shall be included in all c
               <a href="#pablo" class="btn btn-neutral btn-twitter btn-just-icon">
                 <i class="fa fa-twitter"></i>
               </a>
-            </div>
+            </div> -->
             <form class="register-form">
+              <label for="full-name">Full Name</label>
+              <input class="form-control" id="full-name" placeholder="Full Name"></input>
+              <!-- <label for='username'>Username</label>
+              <input class="form-control" id="username" type="text" placeholder="Username"></input> -->
+              <!-- <label></label> -->
               <label>Email</label>
-              <input type="text" class="form-control" placeholder="Email">
+              <input type="email" class="form-control" placeholder="Email">
               <label>Password</label>
               <input type="password" class="form-control" placeholder="Password">
+              <label>Confirm Password</label>
+              <input type="password" class="form-control" placeholder="Confirm Password">
+
+              <div style="margin-top:10px;" class="form-check-radio">
+                <label class="form-check-label">
+                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
+                  Teacher
+                  <span class="form-check-sign"></span>
+                </label>
+              </div>
+              
+              <div class="form-check-radio">
+                <label class="form-check-label">
+                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2" checked>
+                  Student
+                  <span class="form-check-sign"></span>
+                </label>
+              </div>
+
               <button class="btn btn-danger btn-block btn-round">Register</button>
             </form>
             <div class="forgot">
