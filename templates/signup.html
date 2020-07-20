@@ -141,7 +141,7 @@ The above copyright notice and this permission notice shall be included in all c
         <div class="col-lg-4 ml-auto mr-auto">
           <div style="margin: 15px 0 20px 0; margin-right:auto; margin-left:auto; width:450px;" class="card card-register">
             <!-- <h3 style="margin-top:5px, margin-bottom: 0px" class="title mx-auto">ClassRoomZ</h3> -->
-            <h3 style="margin-top:10px; margin-bottom: 5px" class="title mx-auto">Create Your Account</h3>
+            <h3 style="margin-top:10px; margin-bottom: 5px; font-weight:bold" class="title mx-auto">Create Your Account</h3>
             <!-- <div class="social-line text-center">
               <a href="#pablo" class="btn btn-neutral btn-facebook btn-just-icon">
                 <i class="fa fa-facebook-square"></i>
@@ -153,7 +153,7 @@ The above copyright notice and this permission notice shall be included in all c
                 <i class="fa fa-twitter"></i>
               </a>
             </div> -->
-            <form class="register-form">
+            <form class="register-form" method="POST" action="{{url_for('signup')}}">
               <label for="full-name">Full Name</label>
               <input class="form-control" name="signup-name"  placeholder="Full Name"></input>
               <!-- <label for='username'>Username</label>
@@ -186,6 +186,9 @@ The above copyright notice and this permission notice shall be included in all c
                 <input type="submit" class="btn btn-danger btn-block btn-round" value="Let's Go">
               </div>
             </form>
+            {% if flag == 0 %}
+            <div class="alert alert-warning" role="alert"> Username already in use!</div>
+            {% endif %}
           </div>
         </div>
       </div>
