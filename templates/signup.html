@@ -139,9 +139,12 @@ The above copyright notice and this permission notice shall be included in all c
     <div class="container">
       <div class="row">
         <div class="col-lg-4 ml-auto mr-auto">
+          {% if flag == 0 %}
+          <div class="alert alert-danger" style="margin-top:5rem"role="alert"> Email already in use!</div>
+          {% endif %}
           <div style="margin: 15px 0 20px 0; margin-right:auto; margin-left:auto; width:450px;" class="card card-register">
             <!-- <h3 style="margin-top:5px, margin-bottom: 0px" class="title mx-auto">ClassRoomZ</h3> -->
-            <h3 style="margin-top:10px; margin-bottom: 5px; font-weight:bold" class="title mx-auto">Create Your Account</h3>
+            <h3 style="margin-top:1rem; margin-bottom: 2rem ; font-weight:bold" class="title mx-auto">Create Your Account</h3>
             <!-- <div class="social-line text-center">
               <a href="#pablo" class="btn btn-neutral btn-facebook btn-just-icon">
                 <i class="fa fa-facebook-square"></i>
@@ -153,17 +156,18 @@ The above copyright notice and this permission notice shall be included in all c
                 <i class="fa fa-twitter"></i>
               </a>
             </div> -->
+
             <form class="register-form" method="POST" action="{{url_for('signup')}}">
-              <label for="full-name">Full Name</label>
+
               <input class="form-control" name="signup-name"  placeholder="Full Name"></input>
               <!-- <label for='username'>Username</label>
               <input class="form-control" id="username" type="text" placeholder="Username"></input> -->
               <!-- <label></label> -->
-              <label>Email</label>
+
               <input type="email" name="signup-email" class="form-control" placeholder="Email">
-              <label>Password</label>
+
               <input type="password" name="signup-password" class="form-control" placeholder="Password">
-              <label>Confirm Password</label>
+
               <input type="password" name="signup-confirm-password" class="form-control" placeholder="Confirm Password">
               <div class="row" style="margin-left:45px; margin-top:20px;">
                 <div class="form-check-radio">
@@ -186,9 +190,7 @@ The above copyright notice and this permission notice shall be included in all c
                 <input type="submit" class="btn btn-danger btn-block btn-round" value="Let's Go">
               </div>
             </form>
-            {% if flag == 0 %}
-            <div class="alert alert-warning" role="alert"> Username already in use!</div>
-            {% endif %}
+
           </div>
         </div>
       </div>

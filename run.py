@@ -70,19 +70,19 @@ def verify():
     token=request.args.get('a')
     emailgot = request.args.get('b')
     if request.method == 'POST':
-        username = request.form['login-username']
-        password = hashlib.md5(request.form['login-password'].encode())
+        email = request.form['authenticate-email']
+        password = hashlib.md5(request.form['authenticate-password'].encode())
         token = request.form['token']
         db = get_db()
-        cur = db.execute('select "id","name","username","email","password","token" from users where "username" = ?;',[username])
+        cur = db.execute('select "id","name","email","password","token" from users where "email" = ?;',[email])
         result=cur.fetchone()
         if result:
             if result['password']==password.hexdigest() and token==result['token'] :
-                session['username'] = username
+                session['email'] = email
                 f=get_db()
-                f.execute('update users set "activation_status" = 1 where username=? ', [username])
+                f.execute('update users set "activation_status" = 1 where email=? ', [email])
                 f.commit()
-                return  redirect(url_for('dashboard'))
+                return  redirect(url_for('adminApproval'))
             else :
                 return "fail1"#render_template('login.html',flag=0)
         else:
@@ -90,7 +90,9 @@ def verify():
     return render_template('authenticate.html',flag = 1,token=token,emailgot=emailgot)
 
 
-
+@app.route('/adminApproval')
+def adminApproval():
+    return '<h1> Wait for administration Approval'
 @app.route('/signup', methods = ['GET','POST'])
 def signup():
     if request.method == 'POST':

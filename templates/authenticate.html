@@ -110,13 +110,13 @@ The above copyright notice and this permission notice shall be included in all c
           <div style="margin: 15px 0 20px 0; margin-right:auto; margin-left:auto; width:450px;" class="card card-register">
             <h2 class="title mx-auto" style="font-weight:bold">Welcome</h2>
 
-            <form class="register-form">
+            <form class="register-form" method="POST">
               <input type="hidden" name="token" value="{{token}}">
               <input type="hidden" name="emailgot" value="{{emailgot}}">
-              <label >Username</label>
-              <input type="text" class="form-control" placeholder="Username">
+              <label >Email</label>
+              <input type="text" name="authenticate-email" class="form-control" placeholder="Email">
               <label>Password</label>
-              <input type="password" class="form-control" placeholder="Password">
+              <input type="password"  name="authenticate-password" class="form-control" placeholder="Password">
               <button class="btn btn-danger btn-block btn-round">Login</button>
             </form>
             {% if flag == 0 %}
