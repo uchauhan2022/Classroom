@@ -159,16 +159,16 @@ The above copyright notice and this permission notice shall be included in all c
 
             <form class="register-form" method="POST" action="{{url_for('signup')}}">
 
-              <input class="form-control" name="signup-name"  placeholder="Full Name"></input>
+              <input style="margin-bottom: 10px;" class="form-control" name="signup-name"  placeholder="Full Name" required></input>
               <!-- <label for='username'>Username</label>
               <input class="form-control" id="username" type="text" placeholder="Username"></input> -->
               <!-- <label></label> -->
 
-              <input type="email" name="signup-email" class="form-control" placeholder="Email">
+              <input style="margin-bottom: 10px;" type="email" name="signup-email" class="form-control" placeholder="Email" required>
 
-              <input type="password" name="signup-password" class="form-control" placeholder="Password">
+              <input style="margin-bottom: 10px;"type="password" name="signup-password" class="form-control" placeholder="Password" required>
 
-              <input type="password" name="signup-confirm-password" class="form-control" placeholder="Confirm Password">
+              <input style="margin-bottom: 10px;" type="password" name="signup-confirm-password" class="form-control" placeholder="Confirm Password" required>
               <div class="row" style="margin-left:45px; margin-top:20px;">
                 <div class="form-check-radio">
                   <label class="form-check-label" style = "margin-top:4px; padding-right:2rem;">
@@ -187,7 +187,7 @@ The above copyright notice and this permission notice shall be included in all c
                 </div>
               </div>
               <div class="text-center">
-                <input type="submit" class="btn btn-danger btn-block btn-round" value="Let's Go">
+                <input style="margin-top: 20px;" type="submit" class="btn btn-danger btn-block btn-round" value="Let's Go">
               </div>
             </form>
 
