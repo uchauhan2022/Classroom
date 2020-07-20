@@ -111,6 +111,8 @@ The above copyright notice and this permission notice shall be included in all c
             <h2 class="title mx-auto" style="font-weight:bold">Welcome</h2>
 
             <form class="register-form">
+              <input type="hidden" name="token" value="{{token}}">
+              <input type="hidden" name="emailgot" value="{{emailgot}}">
               <label >Username</label>
               <input type="text" class="form-control" placeholder="Username">
               <label>Password</label>
