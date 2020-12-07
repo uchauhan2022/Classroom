@@ -24,7 +24,7 @@ The above copyright notice and this permission notice shall be included in all c
   <nav class="navbar navbar-expand-lg fixed-top navbar-transparent " style = "padding-top:5px" color-on-scroll="300">
     <div class="container">
       <div class="navbar-translate">
-        <a class="navbar-brand" href="https://demos.creative-tim.com/paper-kit/index.html" rel="tooltip" title="Coded by Creative Tim" data-placement="bottom" target="_blank">
+        <a class="navbar-brand" href="#" rel="tooltip" title="Coded by Creative Tim" data-placement="bottom" target="_blank">
           ClassRoom
         </a>
         <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
@@ -36,10 +36,10 @@ The above copyright notice and this permission notice shall be included in all c
       <div class="collapse navbar-collapse justify-content-end" id="navigation">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a href="#"  class="nav-link"><i class="fa fa-sign-in" aria-hidden="true"></i>  Login</a>
+            <a href="{{url_for('login')}}"  class="nav-link"><i class="fa fa-sign-in" aria-hidden="true"></i>  Login</a>
           </li>
           <li class="nav-item">
-            <a href="#" class="btn btn-danger btn-round">Create an account</a>
+            <a href="{{url_for('signup')}}" class="btn btn-danger btn-round">Create an account</a>
           </li>
         </ul>
       </div>
@@ -51,7 +51,7 @@ The above copyright notice and this permission notice shall be included in all c
     <div class="content-center">
       <div class="container">
         <div class="title-brand">
-          <h1 class="presentation-title text-center correct1">CLASSROOM</h1>
+          <h1 class="presentation-title text-center correct1">CLAZY</h1>
           <div class="fog-low">
             <img src="../static/home/assets/img/fog-low.png" alt="">
           </div>
@@ -59,7 +59,7 @@ The above copyright notice and this permission notice shall be included in all c
             <img src="../static/home/assets/img/fog-low.png" alt="">
           </div>
         </div>
-        <h2 class="presentation-subtitle text-center">Blah Blah Blah </h2>
+        <h1 class="presentation-subtitle text-center">Your Classroom is Online.. </h1>
       </div>
     </div>
     <div class="moving-clouds" style="background-image: url('../static/home/assets/img/clouds.png'); "></div>

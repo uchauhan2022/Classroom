@@ -30,7 +30,7 @@
           </a>
         </div>
         <ul class="nav">
-          <li class="active ">
+          <li >
             <a href="{{url_for('dashboard')}}">
               <i class="tim-icons icon-chart-pie-36"></i>
               <p>Home</p>
@@ -48,7 +48,7 @@
               <p>Maps</p>
             </a>
           </li> -->
-          <li>
+          <li class="active">
             <a href="{{url_for('UCS503')}}">
               <i class="tim-icons icon-bell-55"></i>
               <p>UCS503</p>
@@ -163,154 +163,88 @@
       <!-- End Navbar -->
       <div class="content">
      <div class="row">
-          <div class="col-12">
-            <div class="card card-chart">
-              <div class="card-header ">
-                <div class="row">
-                  <div class="col-sm-6 text-left">
-                    <h5 class="card-category">Your Personal Performance Tracker</h5>
-                    <h2 class="card-title">Assignments Score</h2>
-                  </div>
-                  <div class="col-sm-6">
-                    <div class="btn-group btn-group-toggle float-right" data-toggle="buttons">
-                      <label class="btn btn-sm btn-primary btn-simple active" id="0">
-                        <input type="radio" name="options" checked>
-                        <span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">Your Score</span>
-                        <span class="d-block d-sm-none">
-                          <i class="tim-icons icon-single-02"></i>
-                        </span>
-                      </label>
-                      <label class="btn btn-sm btn-primary btn-simple" id="1">
-                        <input type="radio" class="d-none d-sm-none" name="options">
-                        <span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">Total Score</span>
-                        <span class="d-block d-sm-none">
-                          <i class="tim-icons icon-gift-2"></i>
-                        </span>
-                      </label>
-                      <label class="btn btn-sm btn-primary btn-simple" id="2">
-                        <input type="radio" class="d-none" name="options">
-                        <span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">Relative Score</span>
-                        <span class="d-block d-sm-none">
-                          <i class="tim-icons icon-tap-02"></i>
-                        </span>
-                      </label>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="card-body">
-                <div class="chart-area">
-                  <canvas id="chartBig1"></canvas>
-                </div>
-              </div>
+      <div class="col-12">
+        <div class="card ">
+          <div class="card-header">
+            <h4 class="card-title"> Course Topics</h4>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table tablesorter " id="">
+                <thead class=" text-primary">
+                  <tr>
+                    <th>
+                     Subject topic
+                    </th>
+                    <th>
+                      Lecture date
+                    </th>
+                    <th>
+                      Duration
+                    </th>
+                    <th class="text-center">
+                      Link to recorded lecture
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {%for i in topics%}
+                  <tr>
+                    <td>
+                      {{i.topic}}
+                    </td>
+                    <td>
+                      {{i.date}}
+                    </td>
+                    <td>
+                      {{i.duration}}
+                    </td>
+                    <td class="text-center">
+                      {{i.link}}
+                    </td>
+                  </tr>
+                  {%endfor%}
+                </tbody>
+              </table>
             </div>
           </div>
+        </div>
+      </div>
         </div> 
         <div class="row">
-          <div class="col-lg-4">
-            <div class="card card-chart">
+          <div class="col-lg-6">
+            <div class="card ">
               <div class="card-header">
-                <h5 class="card-category">Assignments pending this week</h5>
-                <h3 class="card-title"><i class="tim-icons icon-bell-55 text-primary"></i> 5</h3>
+                <h4 class="card-title"> Submit Assignments</h4>
               </div>
               <div class="card-body">
-                <div class="chart-area">
-                  <canvas id="chartLinePurple"></canvas>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="card card-chart">
-              <div class="card-header">
-                <h5 class="card-category">Upcoming Quizes</h5>
-                <h3 class="card-title"><i class="tim-icons icon-delivery-fast text-info"></i> 1</h3>
-              </div>
-              <div class="card-body">
-                <div class="chart-area">
-                  <canvas id="CountryChart"></canvas>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="card card-chart">
-              <div class="card-header">
-                <h5 class="card-category">Overall Attendance</h5>
-                <h3 class="card-title"><i class="tim-icons icon-send text-success"></i> 89%</h3>
-              </div>
-              <div class="card-body">
-                <div class="chart-area">
-                  <canvas id="chartLineGreen"></canvas>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> 
-        <div class="row">
-          <div class="col-lg-6 col-md-12">
-            <div class="card card-tasks">
-              <div class="card-header ">
-                <h6 class="title d-inline">Tasks</h6>
-                <p class="card-category d-inline">today</p>
-                <div class="dropdown">
-                  <button type="button" class="btn btn-link btn-icon" data-toggle="modal" data-target="#exampleModal">
-                    <i class="tim-icons icon-simple-add"></i>
-                  </button>
-                  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h5 class="modal-title" id="exampleModalLabel">Add a new task</h5>
-                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                          </button>
-                        </div>
-                        <div class="modal-body">
-                          <form method="POST">
-                            <div class="form-group">
-                              <label for="exampleInputEmail1">Task Heading</label>
-                              <input type="text" class="form-control" name="task-heading" aria-describedby="emailHelp" placeholder="Heading">
-                            </div>
-                            <div class="form-group">
-                              <label for="exampleInputPassword1">Description</label>
-                              <input type="text" class="form-control" name="task-description" placeholder="Description">
-                            </div>
-                            <div class="modal-footer">
-                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                              <button type="submit" class="btn btn-primary">Save changes</button>
-                            </div>
-                          </form>
-                        </div>
-                        
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="card-body ">
-                <div class="table-full-width table-responsive">
-                  <table class="table">
+                <div class="table-responsive">
+                  <table class="table tablesorter " id="">
+                    <thead class=" text-primary">
+                      <tr>
+                        <th>
+                         Assignment name
+                        </th>
+                        <th>
+                          Due date
+                        </th>
+                        <th>
+                          Submition link
+                        </th>
+                      </tr>
+                    </thead>
                     <tbody>
-                      {%for i in tasks%}
+                      {%for i in assignments%}
                       <tr>
                         <td>
-                          <div class="form-check">
-                            <label class="form-check-label">
-                              <input class="form-check-input" type="checkbox" value="">
-                              <span class="form-check-sign">
-                                <span class="check"></span>
-                              </span>
-                            </label>
-                          </div>
+                          {{i.name}}
                         </td>
                         <td>
-                          <p class="title">{{i.heading}}</p>
-                          <p class="text-muted">{{i.description}}</p>
+                          {{i.date}}
                         </td>
-                        <td class="td-actions text-right">
-                          <button type="button" rel="tooltip" title="" class="btn btn-link" data-original-title="Edit Task">
-                            <i class="tim-icons icon-pencil"></i>
+                        <td>
+                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#upload">
+                            Upload
                           </button>
                         </td>
                       </tr>
@@ -321,10 +255,10 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-6 col-md-12">
+          <div class="col-lg-6">
             <div class="card ">
               <div class="card-header">
-                <h4 class="card-title"> Subject Lists</h4>
+                <h4 class="card-title"> Attend Quiz</h4>
               </div>
               <div class="card-body">
                 <div class="table-responsive">
@@ -332,41 +266,81 @@
                     <thead class=" text-primary">
                       <tr>
                         <th>
-                         Subject Code
+                        Quiz name
                         </th>
                         <th>
-                          Subject Name
+                          Start date
                         </th>
                         <th>
-                          Credits
-                        </th>
-                        <th class="text-center">
-                          Semester
+                          Quiz Link
                         </th>
                       </tr>
                     </thead>
                     <tbody>
+                      {%for i in quiz%}
                       <tr>
                         <td>
-                          UCS503
+                          {{i.name}}
                         </td>
                         <td>
-                          Software Engineering
+                          {{i.date}}
                         </td>
                         <td>
-                          4
-                        </td>
-                        <td class="text-center">
-                          5
+                          <button type="button" class="btn btn-primary " >
+                            Start Quiz
+                          </button>
                         </td>
                       </tr>
+                      {%endfor%}
                     </tbody>
                   </table>
                 </div>
               </div>
             </div>
           </div>
+          <div class="modal fade" id="upload" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Submit Assignment</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form method="GET">
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Confirm Roll Number</label>
+                      <input type="text" class="form-control" name="task-heading" aria-describedby="emailHelp" placeholder="Roll Number">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">Remarks</label>
+                      <input type="text" class="form-control" name="task-description" placeholder="Remarks">
+                    </div>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+                      </div>
+                      <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="inputGroupFile01"
+                          aria-describedby="inputGroupFileAddon01">
+                        <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                  </form>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+          
+          </div>
         </div> 
+         
       </div>
     </div>
   </div>

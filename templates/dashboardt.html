@@ -31,7 +31,7 @@
         </div>
         <ul class="nav">
           <li class="active ">
-            <a href="{{url_for('dashboard')}}">
+            <a href="{{url_for('dashboardt')}}">
               <i class="tim-icons icon-chart-pie-36"></i>
               <p>Home</p>
             </a>
@@ -49,13 +49,13 @@
             </a>
           </li> -->
           <li>
-            <a href="{{url_for('UCS503')}}">
+            <a href="{{url_for('coe4')}}">
               <i class="tim-icons icon-bell-55"></i>
-              <p>UCS503</p>
+              <p>2COE-4</p>
             </a>
           </li>
           <li>
-            <a href="{{url_for('profile')}}">
+            <a href="{{url_for('profilet')}}">
               <i class="tim-icons icon-single-02"></i>
               <p>User Profile</p>
             </a>
@@ -121,7 +121,7 @@
                   </p>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-right dropdown-navbar">
-                  <li class="nav-link"><a href="#" class="nav-item dropdown-item">Assignments Due</a></li>
+                  <li class="nav-link"><a href="#" class="nav-item dropdown-item">Upcoming Lectures</a></li>
                   
                 </ul>
               </li>
@@ -162,91 +162,115 @@
 
       <!-- End Navbar -->
       <div class="content">
-     <div class="row">
+        
+        <div class="row">
           <div class="col-12">
-            <div class="card card-chart">
+            <div class="card card-tasks">
               <div class="card-header ">
-                <div class="row">
-                  <div class="col-sm-6 text-left">
-                    <h5 class="card-category">Your Personal Performance Tracker</h5>
-                    <h2 class="card-title">Assignments Score</h2>
-                  </div>
-                  <div class="col-sm-6">
-                    <div class="btn-group btn-group-toggle float-right" data-toggle="buttons">
-                      <label class="btn btn-sm btn-primary btn-simple active" id="0">
-                        <input type="radio" name="options" checked>
-                        <span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">Your Score</span>
-                        <span class="d-block d-sm-none">
-                          <i class="tim-icons icon-single-02"></i>
-                        </span>
-                      </label>
-                      <label class="btn btn-sm btn-primary btn-simple" id="1">
-                        <input type="radio" class="d-none d-sm-none" name="options">
-                        <span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">Total Score</span>
-                        <span class="d-block d-sm-none">
-                          <i class="tim-icons icon-gift-2"></i>
-                        </span>
-                      </label>
-                      <label class="btn btn-sm btn-primary btn-simple" id="2">
-                        <input type="radio" class="d-none" name="options">
-                        <span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">Relative Score</span>
-                        <span class="d-block d-sm-none">
-                          <i class="tim-icons icon-tap-02"></i>
-                        </span>
-                      </label>
+                <h6 class="title d-inline">Upcoming Lectures</h6>
+                <p class="card-category d-inline">Software Engineering</p>
+                <div class="dropdown">
+                  <button type="button" class="btn btn-link btn-icon" data-toggle="modal" data-target="#exampleModal">
+                    <i class="tim-icons icon-simple-add"></i>
+                  </button>
+                  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">Add a new lecture</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          <form method="POST">
+                            <div class="form-group">
+                              <label for="exampleInputEmail1">Lecture name</label>
+                              <input type="text" class="form-control" name="lecture-name" aria-describedby="emailHelp" placeholder="Heading">
+                            </div>
+                            <div class="form-group">
+                              <label for="exampleInputPassword1">Description</label>
+                              <input type="text" class="form-control" name="lecture-description" placeholder="Description">
+                            </div>
+                            <div class="form-group">
+                              <label for="exampleInputPassword1">batch</label>
+                              <input type="text" class="form-control" name="lecture-batch" placeholder="Description">
+                            </div>
+                            <div class="form-group">
+                              <label for="exampleInputPassword1">Date</label>
+                              <input type="text" class="form-control" name="lecture-date" placeholder="Description">
+                            </div>
+                            <div class="form-group">
+                              <label for="exampleInputPassword1">Time</label>
+                              <input type="text" class="form-control" name="lecture-time" placeholder="Description">
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                              <button type="submit" class="btn btn-primary">Add Lecture</button>
+                            </div>
+                          </form>
+                        </div>
+                        
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="card-body">
-                <div class="chart-area">
-                  <canvas id="chartBig1"></canvas>
+              <div class="card-body ">
+                <div class="table-full-width table-responsive">
+                  <table class="table">
+                    <thead class=" text-primary">
+                      <tr>
+                        <th>Mark Completed</th>
+                        <th>
+                          Lecture Name
+                        </th>
+                        <th>
+                          Batch Name
+                        </th>
+                        <th>
+                          Date
+                        </th>
+                        <th >
+                          Time
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {%for i in lectures%}
+                      <tr>
+                        <td>
+                          <div class="form-check">
+                            <label class="form-check-label">
+                              <input class="form-check-input" type="checkbox" value="">
+                              <span class="form-check-sign">
+                                <span class="check"></span>
+                              </span>
+                            </label>
+                          </div>
+                        </td>
+                        <td>
+                          <p class="title">{{i.name}}</p>
+                          <p class="text-muted">{{i.description}}</p>
+                        </td>
+                        <td>
+                          <p class="title">{{i.batch}}</p> 
+                        </td>
+                        <td class="td-actions ">
+                          <p class="title">{{i.date}}</p>
+                        </td>
+                        <td class="td-actions">
+                          <p class="title">{{i.time}}</p>
+                        </td>
+                      </tr>
+                      {%endfor%}
+                    </tbody>
+                  </table>
                 </div>
               </div>
             </div>
           </div>
-        </div> 
-        <div class="row">
-          <div class="col-lg-4">
-            <div class="card card-chart">
-              <div class="card-header">
-                <h5 class="card-category">Assignments pending this week</h5>
-                <h3 class="card-title"><i class="tim-icons icon-bell-55 text-primary"></i> 5</h3>
-              </div>
-              <div class="card-body">
-                <div class="chart-area">
-                  <canvas id="chartLinePurple"></canvas>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="card card-chart">
-              <div class="card-header">
-                <h5 class="card-category">Upcoming Quizes</h5>
-                <h3 class="card-title"><i class="tim-icons icon-delivery-fast text-info"></i> 1</h3>
-              </div>
-              <div class="card-body">
-                <div class="chart-area">
-                  <canvas id="CountryChart"></canvas>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="card card-chart">
-              <div class="card-header">
-                <h5 class="card-category">Overall Attendance</h5>
-                <h3 class="card-title"><i class="tim-icons icon-send text-success"></i> 89%</h3>
-              </div>
-              <div class="card-body">
-                <div class="chart-area">
-                  <canvas id="chartLineGreen"></canvas>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> 
+        </div>
         <div class="row">
           <div class="col-lg-6 col-md-12">
             <div class="card card-tasks">
@@ -254,10 +278,10 @@
                 <h6 class="title d-inline">Tasks</h6>
                 <p class="card-category d-inline">today</p>
                 <div class="dropdown">
-                  <button type="button" class="btn btn-link btn-icon" data-toggle="modal" data-target="#exampleModal">
+                  <button type="button" class="btn btn-link btn-icon" data-toggle="modal" data-target="#task">
                     <i class="tim-icons icon-simple-add"></i>
                   </button>
-                  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal fade" id="task" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                       <div class="modal-content">
                         <div class="modal-header">
@@ -341,7 +365,7 @@
                           Credits
                         </th>
                         <th class="text-center">
-                          Semester
+                          Batch
                         </th>
                       </tr>
                     </thead>
@@ -357,7 +381,21 @@
                           4
                         </td>
                         <td class="text-center">
-                          5
+                          COE4
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          UCS503
+                        </td>
+                        <td>
+                          Software Engineering
+                        </td>
+                        <td>
+                          4
+                        </td>
+                        <td class="text-center">
+                          COE8
                         </td>
                       </tr>
                     </tbody>
@@ -366,6 +404,7 @@
               </div>
             </div>
           </div>
+        </div> 
         </div> 
       </div>
     </div>
